@@ -60,7 +60,7 @@ const App = () => {
 function Header() {
   return (
     <header className="header">
-      <h1>Fast React Pizza &Co</h1>;
+      <h1>Fast React Pizza &Co.</h1>
     </header>
   );
 }
@@ -75,7 +75,7 @@ const Footer = () => {
   //   else alert("Sorry We are closed!!");
   if (isOpen) {
     return (
-      <footer>
+      <footer className="footer">
         {new Date().toLocaleTimeString()}. We are currently Open!!
       </footer>
     );
@@ -88,12 +88,12 @@ const Footer = () => {
 
 const Menu = () => {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 };
 
@@ -101,7 +101,7 @@ const Pizza = () => {
   return (
     <div>
       <img src="/pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h1>Pizza Spinaci</h1>
+      <h3>Pizza Spinaci</h3>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
