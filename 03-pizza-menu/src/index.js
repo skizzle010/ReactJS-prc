@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -46,18 +47,65 @@ const pizzaData = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h1>Hello React</h1>
-      <Pizza />
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
     </div>
+  );
+};
+
+function Header() {
+  return (
+    <header className="header">
+      <h1>Fast React Pizza &Co</h1>;
+    </header>
   );
 }
 
-function Pizza() {
-  return <h2>Hello Pizza</h2>;
-}
+const Footer = () => {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour < closeHour;
+  console.log(isOpen);
+  //   if (hour >= openHour && hour < closeHour) alert("We're currently open");
+  //   else alert("Sorry We are closed!!");
+  if (isOpen) {
+    return (
+      <footer>
+        {new Date().toLocaleTimeString()}. We are currently Open!!
+      </footer>
+    );
+  } else {
+    return (
+      <footer>{new Date().toLocaleTimeString()}. Sorry We are closed!!</footer>
+    );
+  }
+};
+
+const Menu = () => {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+};
+
+const Pizza = () => {
+  return (
+    <div>
+      <img src="/pizzas/spinaci.jpg" alt="Pizza Spinaci" />
+      <h1>Pizza Spinaci</h1>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
+  );
+};
 
 //React v18
 const root = ReactDOM.createRoot(document.getElementById("root"));
