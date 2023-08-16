@@ -67,7 +67,7 @@ function Header() {
 
 const Footer = () => {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 2;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour < closeHour;
   console.log(isOpen);
@@ -81,10 +81,7 @@ const Footer = () => {
         <div>
           {isOpen ? (
             <div className="order">
-              <p>
-                We're currently open until {closeHour}:00. Come visit us or
-                order online.
-              </p>
+              <CloseHour closeHour={closeHour} />
               <button className="btn">Order Now!</button>
             </div>
           ) : (
@@ -95,6 +92,14 @@ const Footer = () => {
     </footer>
   );
 };
+
+function CloseHour({ closeHour /*destructing props*/ }) {
+  return (
+    <p>
+      We're currently open until {closeHour}:00. Come visit us or order online.
+    </p>
+  );
+}
 
 const Menu = () => {
   // const pizzas=[]
