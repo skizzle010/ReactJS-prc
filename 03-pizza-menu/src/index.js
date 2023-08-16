@@ -129,25 +129,35 @@ const Menu = () => {
 };
 
 const Pizza = (props) => {
-  if (props.soldOut)
-    return (
-      <div className="pizza">
-        <img className="pizza-image" src={props.photoName} alt={props.name} />
-        <li>
-          <h3>{props.name}</h3>
-          <p>{props.ingredients}</p>
-          <span>{props.price}$</span>
-          <p>Sold Out</p>
-        </li>
-      </div>
-    );
+  // if (props.soldOut)
+  //   return (
+  //     <div className="pizza">
+  //       <img className="pizza-image" src={props.photoName} alt={props.name} />
+  //       <li>
+  //         <h3>{props.name}</h3>
+  //         <p>{props.ingredients}</p>
+  //         <span>{props.price}$</span>
+  //         <p>Sold Out</p>
+  //       </li>
+  //     </div>
+  //   );
+  // return (
+  //   <div className="pizza">
+  //     <img src={props.photoName} alt={props.name} />
+  //     <li>
+  //       <h3>{props.name}</h3>
+  //       <p>{props.ingredients}</p>
+  //       <span>{props.price}$</span>
+  //     </li>
+  //   </div>
+  // );
   return (
     <div className="pizza">
       <img src={props.photoName} alt={props.name} />
       <li>
         <h3>{props.name}</h3>
         <p>{props.ingredients}</p>
-        <span>{props.price}$</span>
+        <span>{props.soldOut ? "sold out" : "$" + props.price}</span>
       </li>
     </div>
   );
