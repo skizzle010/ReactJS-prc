@@ -102,18 +102,25 @@ function CloseHour({ closeHour /*destructing props*/ }) {
 }
 
 const Menu = () => {
-  // const pizzas=[]
+  // const pizzas = [];
   const pizzas = pizzaData;
 
   return (
     <main className="menu">
       <h2>Our Menu</h2>
       {pizzas.length > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza {...pizza} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone over, all organic, all delicious
+          </p>
+
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza {...pizza} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>Sorry, we're currently sold out</p>
       )}
