@@ -70,7 +70,6 @@ const Footer = () => {
   const openHour = 2;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour < closeHour;
-  console.log(isOpen);
   const pizzas = pizzaData;
   //   if (hour >= openHour && hour < closeHour) alert("We're currently open");
   //   else alert("Sorry We are closed!!");
