@@ -152,7 +152,7 @@ const Pizza = (props) => {
   //   </div>
   // );
   return (
-    <div className="pizza">
+    <div className={`pizza ${props.soldOut ? "sold-out" : ""}`}>
       <img src={props.photoName} alt={props.name} />
       <li>
         <h3>{props.name}</h3>
