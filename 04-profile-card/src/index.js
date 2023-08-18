@@ -28,7 +28,7 @@ const Skill = (props) => {
       <span>{props.skill}</span>
       <span>{props.emoji}</span>
 
-      <backgroudn></backgroudn>
+      <background></background>
     </div>
   );
 };
