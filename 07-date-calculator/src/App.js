@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Step />
+    </>
   );
 }
+
+const Step = () => {
+  const [step, setStep] = useState(1);
+  return (
+    <>
+      <div className="component center-row">
+        <button className="button">-</button>
+        <h1>Step: 1</h1>
+        <button className="button">+</button>
+      </div>
+      <div className="component center-row">
+        <button className="button">-</button>
+        <h1>Count: 1</h1>
+        <button className="button">+</button>
+      </div>
+      <div>
+        <p>Today is Mon Jun 21 2027 </p>
+      </div>
+    </>
+  );
+};
 
 export default App;
