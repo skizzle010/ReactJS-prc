@@ -10,7 +10,7 @@ function App() {
 
 const Step = () => {
   const [step, setStep] = useState(1);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   const date = new Date();
   date.setDate(date.getDate() + count);
