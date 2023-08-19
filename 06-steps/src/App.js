@@ -12,12 +12,12 @@ const App = () => {
 
   const handlePrevious = () => {
     if (step === 1) return;
-    setStep(step - 1);
+    setStep((s) => s - 1); //s current state
   };
 
   const handleNext = () => {
     if (step === 3) return;
-    setStep(step + 1);
+    setStep((s) => s + 1); //s current state
   };
 
   return (
@@ -25,7 +25,7 @@ const App = () => {
       {isOpen ? (
         <button
           className="close"
-          onClick={() => setIsOpen(false)} // setIsOpen(!isOpen)
+          onClick={() => setIsOpen(false)} // setIsOpen(!isOpen) // setIsOpen((is)=>(!is)) Here is current state
         >
           &times;
         </button>
