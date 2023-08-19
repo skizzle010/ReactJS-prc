@@ -7,13 +7,11 @@ const messages = [
 ];
 
 const handlePrevious = (step) => {
-  step = step - 1;
-  return step;
+  alert("Previous");
 };
 
 const handleNext = (step) => {
-  step = step + 1;
-  return step;
+  alert("Next");
 };
 
 const App = () => {
