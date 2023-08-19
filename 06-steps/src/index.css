@@ -87,15 +87,15 @@ h3 {
 }
 
 .open {
-  position: absolute;
-  top: 16px;
-  left: 16px;
+  margin: 16px auto; /* Center horizontally with auto margins */
   border: none;
   background: grey;
   cursor: pointer;
   font-size: 24px;
   color: white;
   border-radius: 8px;
+  display: block; /* Make the button a block-level element */
+  padding: 10px 20px; /* Adjust padding as needed */
 }
 
 .close:hover {
