@@ -27,3 +27,14 @@ code {
   height: 32px;
   width: 32px;
 }
+
+.container {
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.date-text {
+  text-align: center; /* Horizontally center the text within the div */
+  font-size: 18px; /* Adjust the font size as needed */
+}
