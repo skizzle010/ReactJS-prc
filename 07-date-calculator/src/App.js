@@ -12,7 +12,7 @@ const Step = () => {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(1);
 
-  const date = new Date("june 21 2027");
+  const date = new Date();
   date.setDate(date.getDate() + count);
 
   function handleStepInc() {
@@ -51,7 +51,13 @@ const Step = () => {
       </div>
       <div className="container">
         <p className="date-text">
-          <span></span>
+          <span>
+            {count === 0
+              ? "Today is "
+              : count > 0
+              ? `${count} days from Today is `
+              : `${Math.abs(count)} ago was `}
+          </span>
           <span>{date.toDateString()}</span>
         </p>
       </div>
