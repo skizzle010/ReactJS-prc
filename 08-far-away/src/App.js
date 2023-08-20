@@ -31,7 +31,7 @@ const Form = () => {
   return (
     <form className="add-form" onSubmit={handleInput}>
       <h3>what do you need for your😍 trip?</h3>
-      <select value={count} onChange={(e) => setCount(e.target.value)}>
+      <select value={count} onChange={(e) => setCount(Number(e.target.value))}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
