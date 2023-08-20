@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: true },
-  { id: 3, description: "Charger", quantity: 3, packed: false },
-];
+const initialItems = [];
 
 function App() {
   return (
@@ -34,6 +30,7 @@ const Form = () => {
 
     setDescription("");
     setCount(1);
+    console.log(initialItems);
   }
 
   return (
