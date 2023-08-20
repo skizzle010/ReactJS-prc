@@ -22,12 +22,20 @@ const Header = () => {
 };
 
 const Form = () => {
-  const [input, setInput] = useState("");
+  const [description, setDescription] = useState("");
   const [count, setCount] = useState(1);
 
   function handleInput(e) {
+    if (!description) return;
     e.preventDefault();
+
+    const newItem = { description, count, packed: false, id: Date.now() };
+    console.log(newItem);
+
+    setDescription("");
+    setCount(1);
   }
+
   return (
     <form className="add-form" onSubmit={handleInput}>
       <h3>what do you need for your😍 trip?</h3>
@@ -41,8 +49,8 @@ const Form = () => {
       <input
         type="text"
         placeholder="Item..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
       ></input>
       <button>ADD</button>
     </form>
