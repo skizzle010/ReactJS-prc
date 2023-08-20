@@ -1,4 +1,4 @@
-import useState from "react";
+import { useState } from "react";
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },
@@ -22,23 +22,28 @@ const Header = () => {
 };
 
 const Form = () => {
-  // const [input, setInput] = useState("");
+  const [input, setInput] = useState("");
+  const [count, setCount] = useState(1);
 
   function handleInput(e) {
     e.preventDefault();
-    // setInput();
   }
   return (
     <form className="add-form" onSubmit={handleInput}>
       <h3>what do you need for your😍 trip?</h3>
-      <select>
+      <select value={count} onChange={(e) => setCount(e.target.value)}>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
           </option>
         ))}
       </select>
-      <input type="text" placeholder="Item..."></input>
+      <input
+        type="text"
+        placeholder="Item..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      ></input>
       <button>ADD</button>
     </form>
   );
