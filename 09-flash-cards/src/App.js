@@ -44,12 +44,14 @@ const questions = [
 ];
 
 function FlashCards() {
-  const [selectedId, setSelectedID] = useState(null);
+  const [selectedId, setSelectedID] = useState(9103);
   return (
     <div className="flashcards">
       {questions.map((question) => (
         <div key={question.id}>
-          <p>{question.question}</p>
+          <p>
+            {question.id === selectedId ? question.answer : question.question}
+          </p>
         </div>
       ))}
     </div>
