@@ -1,3 +1,6 @@
+import "./index.css";
+import { useState } from "react";
+
 export default function App() {
   return (
     <div className="App">
@@ -41,5 +44,14 @@ const questions = [
 ];
 
 function FlashCards() {
-  return <div>Todo</div>;
+  const [selectedId, setSelectedID] = useState(null);
+  return (
+    <div className="flashcards">
+      {questions.map((question) => (
+        <div key={question.id}>
+          <p>{question.question}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
