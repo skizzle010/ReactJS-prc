@@ -63,9 +63,13 @@ const Step = () => {
           <span>{date.toDateString()}</span>
         </p>
         <div>
-          <button className="reset" onClick={handleReset}>
-            Reset
-          </button>
+          {count !== 0 || step !== 1 ? (
+            <button className="reset" onClick={handleReset}>
+              Reset
+            </button>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </>
