@@ -38,3 +38,8 @@ code {
   text-align: center; /* Horizontally center the text within the div */
   font-size: 18px; /* Adjust the font size as needed */
 }
+
+.reset {
+  justify-content: center;
+  align-items: center;
+}

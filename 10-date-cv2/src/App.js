@@ -21,6 +21,10 @@ const Step = () => {
   function handleCountDec() {
     setCount((s) => s - step);
   }
+  function handleReset() {
+    setCount((s) => 0);
+    setStep((s) => 1);
+  }
 
   return (
     <>
@@ -59,7 +63,9 @@ const Step = () => {
           <span>{date.toDateString()}</span>
         </p>
         <div>
-          <button>Reset</button>
+          <button className="reset" onClick={handleReset}>
+            Reset
+          </button>
         </div>
       </div>
     </>
