@@ -3,11 +3,16 @@ import { useState } from "react";
 const initialItems = [];
 
 function App() {
+  const [items, setItems] = useState([]);
+  function handleAddItems(item) {
+    setItems((items) => [...items, item]);
+  }
+
   return (
     <div className="app">
       <Header />
-      <Form />
-      <PackingList />
+      <Form addItems={handleAddItems} />
+      <PackingList items={items} />
       <Stats />
     </div>
   );
@@ -17,7 +22,7 @@ const Header = () => {
   return <h1>🏝️Far Away🧳</h1>;
 };
 
-const Form = () => {
+const Form = (props) => {
   const [description, setDescription] = useState("");
   const [count, setCount] = useState(1);
 
@@ -27,6 +32,7 @@ const Form = () => {
 
     const newItem = { description, count, packed: false, id: Date.now() };
     console.log(newItem);
+    props.addItems(newItem);
 
     setDescription("");
     setCount(1);
@@ -54,11 +60,11 @@ const Form = () => {
   );
 };
 
-const PackingList = () => {
+const PackingList = (props) => {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
+        {props.items.map((item) => (
           <Item item={item} key={item.id} />
         ))}
       </ul>
@@ -70,7 +76,7 @@ const Item = (props) => {
   return (
     <li>
       <span style={props.item.packed ? { textDecoration: "line-through" } : {}}>
-        {props.item.quantity} {props.item.description}
+        {props.item.count} {props.item.description}
       </span>
       <button>❌</button>
     </li>
