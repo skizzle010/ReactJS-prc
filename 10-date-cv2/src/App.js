@@ -15,13 +15,6 @@ const Step = () => {
   const date = new Date();
   date.setDate(date.getDate() + count);
 
-  function handleStepInc() {
-    setStep((s) => s + 1);
-  }
-  function handleStepDec() {
-    setStep((s) => s - 1);
-  }
-
   function handleCountInc() {
     setCount((s) => s + step);
   }
@@ -32,19 +25,24 @@ const Step = () => {
   return (
     <>
       <div className="component center-row">
-        <button className="button" onClick={handleStepDec}>
-          -
-        </button>
-        <h1>Step: {step}</h1>
-        <button className="button" onClick={handleStepInc}>
-          +
-        </button>
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        ></input>
+        <div>{step}</div>
       </div>
       <div className="component center-row">
         <button className="button" onClick={handleCountDec}>
           -
         </button>
-        <h1>Count: {count}</h1>
+        <input
+          type="text"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button className="button" onClick={handleCountInc}>
           +
         </button>
@@ -60,6 +58,9 @@ const Step = () => {
           </span>
           <span>{date.toDateString()}</span>
         </p>
+        <div>
+          <button>Reset</button>
+        </div>
       </div>
     </>
   );
